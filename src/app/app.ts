@@ -8,10 +8,11 @@ import { IfRender } from './components/if-render/if-render';
 import { Eventos } from './components/eventos/eventos';
 import { Emitter } from './components/emitter/emitter';
 import { ListRender } from './components/list-render/list-render';
+import { Pipes } from './components/pipes/pipes'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FirstComponet, ParentData,Directives, IfRender, Eventos, Emitter, ListRender],
+  imports: [RouterOutlet, FirstComponet, ParentData,Directives, IfRender, Eventos, Emitter, ListRender, Pipes],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
