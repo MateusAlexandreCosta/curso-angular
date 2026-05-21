@@ -1,10 +1,28 @@
-<div class="class">IF Render
-    <div *ngIf="canShow">estamos mostrando isso porque foi permitido</div>
-   
-</div>
+<div class="class">
 
-@if (canShow) {
-    <div>@SHOW MOSTRAR</div>
-} @else {
-    <div>NAO MOSTRAR</div>
-}
+    <h2 [ngStyle]="{'color': 'red', 'font-size': '20px'}">IF Render - CONDICIONAIS LEGADO</h2>
+    <div class="class">
+        <div *ngIf="canShow">Estamos mostrando isso porque foi permitido</div>
+        <h2 *ngIf="name === 'Mateus'; else nameNotFound" [ngStyle]="{'color': 'green', 'font-size': '20px'}">Nome é Mateus</h2>
+        <ng-template #nameNotFound>
+           <h2 [ngStyle]="{'color': 'red', 'font-size': '20px'}">Nome não encontrado do Mateus - ELSE </h2> 
+        </ng-template>
+    </div>
+    
+    <h2 [ngStyle]="{'color': 'red', 'font-size': '20px'}">IF Render - CONDICIONAIS ANGULAR 17</h2>
+
+    <div class="class">
+
+        @if (canShow) {
+            <h2>SHOW MOSTRAR</h2>
+        } @else {
+            <h2>NAO MOSTRAR</h2>
+        }
+
+        @if (name === 'Mateus') {
+            <h2>Nome é Mateus - IF</h2>
+        } @else {
+            <h2>Nome não é Mateus-ELSE</h2>
+        }
+    </div>
+</div>

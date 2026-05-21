@@ -1,0 +1,5 @@
+.class {
+    border-bottom: 3px solid blue;  /* sobrescreve o vermelho global */
+    padding: 1em;                   /* sobrescreve 2em */
+    margin-bottom: 0.5em;           /* sobrescreve 1em */
+  }

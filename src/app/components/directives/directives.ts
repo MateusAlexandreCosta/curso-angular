@@ -19,7 +19,7 @@ export class Directives {
   underline = 'underline-title'; // underline-title é uma classe que está no arquivo directives.css
 
   constructor() {
-    this.size = 50;
+    this.size = 30;
     this.font = 'Arial';
     this.color = 'red';
     this.backgroundColor = 'yellow';
