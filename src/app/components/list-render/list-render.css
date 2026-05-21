@@ -1,0 +1,240 @@
+:host {
+  display: block;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.list-render {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.animal-section {
+  background: linear-gradient(145deg, #1e1b4b 0%, #312e81 55%, #4338ca 100%);
+  border-radius: 1rem;
+  padding: 1.5rem 1.75rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.15),
+    0 12px 28px -8px rgb(49 46 129 / 0.45);
+  color: #e0e7ff;
+}
+
+.animal-section--modern {
+  background: linear-gradient(145deg, #064e3b 0%, #047857 55%, #059669 100%);
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.15),
+    0 12px 28px -8px rgb(5 150 105 / 0.4);
+}
+
+.animal-section h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid rgb(255 255 255 / 0.2);
+}
+
+.animal-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.animal-section li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.85rem 1rem;
+  background: rgb(255 255 255 / 0.08);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.animal-section li:hover {
+  background: rgb(255 255 255 / 0.14);
+  border-color: rgb(255 255 255 / 0.25);
+  transform: translateX(4px);
+}
+
+.animal-name {
+  font-weight: 600;
+  color: #fff;
+}
+
+.animal-age {
+  font-weight: 600;
+  color: #fff;
+}
+
+.animal-type {
+  flex-shrink: 0;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: rgb(255 255 255 / 0.18);
+  border-radius: 999px;
+}
+
+.animal-section--modern .animal-type {
+  background: rgb(255 255 255 / 0.22);
+}
+
+.animal-button {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 0.5rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.28) 0%,
+    rgb(255 255 255 / 0.12) 100%
+  );
+  border: 1px solid rgb(255 255 255 / 0.4);
+  border-radius: 0.5rem;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.12),
+    inset 0 1px 0 rgb(255 255 255 / 0.25);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.animal-button:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 0.38) 0%,
+    rgb(255 255 255 / 0.2) 100%
+  );
+  border-color: rgb(255 255 255 / 0.55);
+  box-shadow:
+    0 4px 12px rgb(0 0 0 / 0.2),
+    inset 0 1px 0 rgb(255 255 255 / 0.35);
+  transform: translateY(-1px);
+}
+
+.animal-button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 0.2),
+    inset 0 2px 4px rgb(0 0 0 / 0.15);
+}
+
+.animal-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.animal-section--modern .animal-button {
+  border-color: rgb(167 243 208 / 0.5);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.12),
+    inset 0 1px 0 rgb(167 243 208 / 0.3);
+}
+
+.animal-section--modern .animal-button:hover {
+  border-color: rgb(167 243 208 / 0.75);
+}
+
+.remove-button {
+  display: block;
+  width: fit-content;
+  margin: 0.5rem auto 0;
+  padding: 0.55rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    rgb(239 68 68 / 0.9) 0%,
+    rgb(185 28 28 / 0.95) 100%
+  );
+  border: 1px solid rgb(254 202 202 / 0.45);
+  border-radius: 0.5rem;
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 0.15),
+    0 4px 14px rgb(185 28 28 / 0.35),
+    inset 0 1px 0 rgb(254 202 202 / 0.35);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+.remove-button:hover {
+  background: linear-gradient(
+    180deg,
+    rgb(248 113 113 / 0.95) 0%,
+    rgb(220 38 38 / 1) 100%
+  );
+  border-color: rgb(254 202 202 / 0.65);
+  box-shadow:
+    0 4px 16px rgb(185 28 28 / 0.45),
+    inset 0 1px 0 rgb(254 226 226 / 0.4);
+  transform: translateY(-1px);
+}
+
+.remove-button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 3px rgb(0 0 0 / 0.2),
+    inset 0 2px 4px rgb(127 29 29 / 0.4);
+}
+
+.remove-button:focus-visible {
+  outline: 2px solid #fecaca;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .list-render {
+    padding: 0.75rem;
+  }
+
+  .animal-section li {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .animal-button {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .remove-button {
+    width: 100%;
+    text-align: center;
+  }
+}
