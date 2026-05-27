@@ -1,0 +1,40 @@
+<section class="two-way-card">
+  <h2>Two Way Binding</h2>
+
+  <form class="two-way-form">
+    <label class="two-way-label" for="name-input">Seu nome</label>
+    <input
+      id="name-input"
+      class="two-way-input"
+      type="text"
+      [(ngModel)]="name"
+      name="name"
+      placeholder="Digite seu nome"
+    />
+    <input type="text" 
+        class="two-way-input"
+        [(ngModel)]="sobreNome" 
+        name="sobreNome" 
+        placeholder="Digite seu sobre nome" />
+    <button type="submit" class="two-way-submit">Enviar</button>
+  </form>
+
+  <p class="two-way-preview">
+    Nome Completo: <strong>{{ name }} {{ sobreNome }}</strong>
+  </p>
+</section>
+
+<section class="two-way-card">
+    <h2>Meu teste two way binding</h2>
+    <form class="two-way-form">
+        <label class="two-way-label" for="idade-input">Sua idade</label>
+        <input 
+            id="idade-input" 
+            type="number" 
+            class="two-way-input"
+            [(ngModel)]="idade" 
+            name="idade" 
+            placeholder="Digite sua idade" />
+    </form>
+    <p class="two-way-preview">Você digitou: <strong>{{ idade }}</strong></p>
+</section>
