@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { FirstComponet } from './components/first-componet/first-componet';
 import { ParentData } from './components/parent-data/parent-data';
 import { Directives } from './components/directives/directives';
@@ -10,12 +11,13 @@ import { ListRender } from './components/list-render/list-render';
 import { Pipes } from './components/pipes/pipes'; 
 import { TwoWayBinding } from './components/two-way-binding/two-way-binding';
 
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FirstComponet, ParentData, Directives,
+  imports: [RouterOutlet, RouterLink, FirstComponet, ParentData, Directives,
     IfRender, Eventos, Emitter, ListRender, Pipes, TwoWayBinding],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css' 
 })
 export class App {
 

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { afterNextRender, Component, inject, signal } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { Animal } from '../../interfaces-model/Animal';
 import { ListService } from '../../services/list-service';
@@ -10,34 +10,35 @@ import { ListService } from '../../services/list-service';
   styleUrl: './list-render.css',
 })
 export class ListRender {
-
-
   showDetails = '';
   listService = inject(ListService);
+  animals = signal<Animal[]>([]);
 
-
-  animals: Animal[] = [
-    { name: 'Turca', type: 'Dog', age: 4 },
-    { name: 'Tom', type: 'Cat', age: 2 },
-    { name: 'Frida', type: 'Bird', age: 1 },
-    { name: 'Bob', type: 'Horse', age: 3 },
-
-  ];
+  constructor() {
+    afterNextRender(() => this.loadAnimals());
+  }
 
   showAge(animal: Animal): void {
-    this.showDetails ="O pet " + animal.name + " tem " + animal.age + " anos de idade";
-    console.log(this.showDetails);
+    this.showDetails = 'O pet ' + animal.name + ' tem ' + animal.age + ' anos de idade';
+    alert(this.showDetails);
   }
 
   removeAnimal(animal: Animal): void {
-    console.log('Removendo animal...', animal.name);
-    this.animals = this.listService.remove(this.animals, animal);
+    this.animals.update((list) => this.listService.remove(list, animal));
     this.showDetails = '';
   }
 
   removeLastAnimal(): void {
-    if (!this.animals.length) return;
-    this.removeAnimal(this.animals[this.animals.length - 1]);
+    const list = this.animals();
+    if (!list.length) return;
+    this.removeAnimal(list[list.length - 1]);
   }
 
+  private loadAnimals(): void {
+    this.listService.getAnimals().subscribe({
+      next: (data) => this.animals.set(data),
+      error: (err) => console.error('Erro ao carregar animais:', err),
+    });
+    console.log('Animais carregados:', this.animals());
+  }
 }
